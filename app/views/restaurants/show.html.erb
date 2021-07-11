@@ -1,0 +1,13 @@
+<h1> Restaurant SHow Page</h1>
+<h1>Name: <%= @restaurant.name %> </h1>
+<p>Address: <%= @restaurant.address %></p>
+<% if @restaurant.pizzas %>
+    <p>Average Pizza Price: $<%= @restaurant.average_price %>
+
+    <ul>List of Pizzas:
+        <% @restaurant.pizzas.each do |pizza| %>
+            <li> <%= link_to pizza.name, pizza_path(pizza)%></li>
+        <% end %>
+    </ul>
+
+ <% end %>
